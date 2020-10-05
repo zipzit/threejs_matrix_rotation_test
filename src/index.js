@@ -19,6 +19,7 @@ const main = () => {
   //--
   camera.position.z = -30;
   scene.add(s_group);
+  scene.add(wheel_group);
   //--
   const createElements = () => {
     const c_geo = new THREE.BoxGeometry(2.5, 0.12, 12);
@@ -38,15 +39,18 @@ const main = () => {
     wheel2.rotation.z = DegsToRadians(90.0);
     const axle = new THREE.Mesh(axleGeometry, c_mat);
     axle.rotation.z = DegsToRadians(90.0);
-    s_group.add(wheel1);
-    s_group.add(wheel2);
-    s_group.add(axle);
+    wheel_group.add(wheel1);
+    wheel_group.add(wheel2);
+    wheel_group.add(axle);
 
     const pivotGeometry = new THREE.CylinderGeometry(0.01, 0.01, 2, 5);
     const pivot = new THREE.Mesh(pivotGeometry, c_mat);
     pivot.rotation.x = DegsToRadians(45.0);
     s_group.add(pivot);
   };
+  
+  const rotateMeshGroup =( meshGroup, RotationAxis, AngleOfRotation) =>{
+  }
 
   const animation = () => {
     requestAnimationFrame(animation);
