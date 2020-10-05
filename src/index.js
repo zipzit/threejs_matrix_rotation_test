@@ -2,6 +2,7 @@ import * as THREE from "three";
 import OrbitControls from "three-orbitcontrols";
 
 const s_group = new THREE.Group();
+const wheel_group = new THREE.Group();
 
 function DegsToRadians(degrees) {
   return (degrees * Math.PI) / 180.0;
@@ -12,6 +13,7 @@ const main = () => {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(18);
+  const pivot;
   //--
   const controls = new OrbitControls(camera, canvas);
   controls.target.set(0, 0, 0);
@@ -44,7 +46,7 @@ const main = () => {
     wheel_group.add(axle);
 
     const pivotGeometry = new THREE.CylinderGeometry(0.01, 0.01, 2, 5);
-    const pivot = new THREE.Mesh(pivotGeometry, c_mat);
+    pivot = new THREE.Mesh(pivotGeometry, c_mat);
     pivot.rotation.x = DegsToRadians(45.0);
     s_group.add(pivot);
   };
@@ -54,6 +56,7 @@ const main = () => {
 
   const animation = () => {
     requestAnimationFrame(animation);
+    rotateMeshGroup( wheel_group, pivot, 5.0);
     // s_group.rotation.y += 0.02;
     // s_group.rotation.x += 0.01;
     camera.lookAt(scene.position);
