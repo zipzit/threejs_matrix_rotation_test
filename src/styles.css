@@ -28,6 +28,6 @@ input[type=range] {
     /* width: 100%; */
     width: 350px;
     margin: 8.35px 0;
-    background-color: transparent;
-    -webkit-appearance: none;
+/*     background-color: transparent; */
+/*     -webkit-appearance: none; */
 }
