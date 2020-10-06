@@ -51,12 +51,22 @@ const main = () => {
     s_group.add(pivot);
   };
   
+  var euler;
   const rotateMeshGroup =( meshGroup, RotationAxis, AngleOfRotation) =>{
+  euler = new THREE.Euler().setFromRotationMatrix(rotationAxis.matrixWorld);
+    meshGroup.forEach(item => {
+      item.rotateOnAxis(euler, DegsToRadians(angle));
+    }) 
   }
 
   const animation = () => {
     requestAnimationFrame(animation);
-    rotateMeshGroup( wheel_group, pivot, 5.0);
+    for (var ang = -20.0, ang<=20.0, ang+=0.2){
+          rotateMeshGroup( wheel_group, pivot, ang);
+      if (ang <= 20){
+        ang = -20;
+      }
+    }
     // s_group.rotation.y += 0.02;
     // s_group.rotation.x += 0.01;
     camera.lookAt(scene.position);
