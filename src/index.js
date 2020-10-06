@@ -51,33 +51,28 @@ const main = () => {
     s_group.add(pivot);
   };
   
+     document.getElementById("slider").addEventListener("input", () => {
+        let tiltValue = document.getElementById("slider").value;
+        document.getElementById("tilt").textContent = "Tilt: " + tiltValue + "° ";
+        rotateMeshElement(wheel_group, pivot, tiltValue);
+     })
+  
   var euler;
   const rotateMeshGroup =( meshGroup, rotationAxis, angleOfRotation) =>{
 //   euler = new THREE.Euler().setFromRotationMatrix(rotationAxis.matrixWorld);
 //     meshGroup.forEach(item => {
 //       item.rotateOnAxis(euler, DegsToRadians(angleOfRotation));
 //     }) 
-    
     console.log( "rotationAxis: ", rotationAxis);
     console.log ("meshGroup: ", meshGroup);
     console.log( "angle: ", angleOfRotation);
+    console.log( "s_group: ", s_group);
   }
 
-  const animation = () => {
-    requestAnimationFrame(animation);
-    for (var ang = -20.0; ang<=20.0; ang+=0.2){
-          rotateMeshGroup( wheel_group, pivot, ang);
-      if (ang <= 20){
-        ang = -20;
-      }
-    }
-    // s_group.rotation.y += 0.02;
-    // s_group.rotation.x += 0.01;
-    camera.lookAt(scene.position);
-    camera.updateMatrixWorld();
+  function animate() {
+    requestAnimationFrame(animate);
     renderer.render(scene, camera);
-    setTimeout(animation, 10000);
-  };
+  }
 
   const onWindowResize = () => {
     const w = window.innerWidth;
