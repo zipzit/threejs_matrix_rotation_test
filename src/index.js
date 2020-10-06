@@ -63,10 +63,10 @@ const main = () => {
     meshGroup.children.forEach(item => {
       item.rotateOnAxis(euler, DegsToRadians(angleOfRotation));
     }) 
-    console.log( "rotationAxis: ", rotationAxis);
-    console.log ("meshGroup: ", meshGroup);
-    console.log( "angle: ", angleOfRotation);
-    console.log( "s_group: ", s_group);
+//     console.log( "rotationAxis: ", rotationAxis);
+//     console.log ("meshGroup: ", meshGroup);
+//     console.log( "angle: ", angleOfRotation);
+//     console.log( "s_group: ", s_group);
   }
 
   function animate() {
