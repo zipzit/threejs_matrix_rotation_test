@@ -82,7 +82,7 @@ const main = () => {
     renderer.setSize(w, h);
   };
 
-  animation();
+  animate();
   createElements();
   onWindowResize();
 
