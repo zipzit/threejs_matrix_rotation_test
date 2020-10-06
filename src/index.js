@@ -52,10 +52,10 @@ const main = () => {
   };
   
   var euler;
-  const rotateMeshGroup =( meshGroup, RotationAxis, AngleOfRotation) =>{
+  const rotateMeshGroup =( meshGroup, rotationAxis, angleOfRotation) =>{
   euler = new THREE.Euler().setFromRotationMatrix(rotationAxis.matrixWorld);
     meshGroup.forEach(item => {
-      item.rotateOnAxis(euler, DegsToRadians(angle));
+      item.rotateOnAxis(euler, DegsToRadians(angleOfRotation));
     }) 
   }
 
