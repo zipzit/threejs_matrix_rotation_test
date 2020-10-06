@@ -34,7 +34,7 @@ const main = () => {
     const c_mat = new THREE.MeshNormalMaterial();
     const board = new THREE.Mesh(c_geo, c_mat);
     board.position.y = 1.0;
-    board.position.z = 5.0;
+    board.position.z = 4.0;
     s_group.add(board);
 
     const wheelGeometry = new THREE.CylinderGeometry(0.375, 0.375, 0.5, 40);
@@ -54,7 +54,7 @@ const main = () => {
     var lineMaterial = new THREE.LineBasicMaterial({ color: "red" });
     var points = [];
     points.push(new THREE.Vector3(0, 0, 0));
-    points.push(new THREE.Vector3(0, 4, -4));
+    points.push(new THREE.Vector3(0, 1.5, -1.5));
     const pivotGeometry = new THREE.Geometry().setFromPoints(points);
     pivot = new THREE.Line(pivotGeometry, lineMaterial);
     pivot.name = "hanger pivot axis";
