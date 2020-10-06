@@ -13,7 +13,7 @@ const main = () => {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(18);
-  const pivot;
+  var pivot;
   //--
   const controls = new OrbitControls(camera, canvas);
   controls.target.set(0, 0, 0);
