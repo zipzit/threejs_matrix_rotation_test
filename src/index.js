@@ -59,10 +59,10 @@ const main = () => {
   
   var euler;
   const rotateMeshGroup =( meshGroup, rotationAxis, angleOfRotation) =>{
-//   euler = new THREE.Euler().setFromRotationMatrix(rotationAxis.matrixWorld);
-//     meshGroup.forEach(item => {
-//       item.rotateOnAxis(euler, DegsToRadians(angleOfRotation));
-//     }) 
+  euler = new THREE.Euler().setFromRotationMatrix(rotationAxis.matrixWorld);
+    meshGroup.children.forEach(item => {
+      item.rotateOnAxis(euler, DegsToRadians(angleOfRotation));
+    }) 
     console.log( "rotationAxis: ", rotationAxis);
     console.log ("meshGroup: ", meshGroup);
     console.log( "angle: ", angleOfRotation);
