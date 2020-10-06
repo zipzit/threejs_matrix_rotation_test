@@ -54,7 +54,7 @@ const main = () => {
      document.getElementById("slider").addEventListener("input", () => {
         let tiltValue = document.getElementById("slider").value;
         document.getElementById("tilt").textContent = "Tilt: " + tiltValue + "° ";
-        rotateMeshElement(wheel_group, pivot, tiltValue);
+        rotateMeshGroup(wheel_group, pivot, tiltValue);
      })
   
   var euler;
