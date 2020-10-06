@@ -58,7 +58,7 @@ const main = () => {
 //       item.rotateOnAxis(euler, DegsToRadians(angleOfRotation));
 //     }) 
     
-    console.log( "rotationAxis: ", rotationAxis.matrixWorld);
+    console.log( "rotationAxis: ", rotationAxis);
     console.log ("meshGroup: ", meshGroup);
     console.log( "angle: ", angleOfRotation);
   }
