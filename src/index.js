@@ -51,9 +51,13 @@ const main = () => {
     wheel_group.add(wheel2);
     wheel_group.add(axle);
 
-    const pivotGeometry = new THREE.CylinderGeometry(0.01, 0.01, 2, 5);
-    pivot = new THREE.Mesh(pivotGeometry, c_mat);
-    pivot.rotation.x = DegsToRadians(45.0);
+    var lineMaterial = new THREE.LineBasicMaterial({ color: "red" });
+    var points = [];
+    points.push(new THREE.Vector3(0, 0, 0));
+    points.push(new THREE.Vector3(0, 10.0, 10.0));
+    const pivotGeometry = new THREE.Geometry().setFromPoints(points);
+    pivot = new THREE.Line(pivotGeometry, lineMaterial);
+    pivot.name = "hanger pivot axis";
     s_group.add(pivot);
   };
   
