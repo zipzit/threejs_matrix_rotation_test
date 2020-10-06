@@ -54,7 +54,7 @@ const main = () => {
     var lineMaterial = new THREE.LineBasicMaterial({ color: "red" });
     var points = [];
     points.push(new THREE.Vector3(0, 0, 0));
-    points.push(new THREE.Vector3(0, 10.0, 10.0));
+    points.push(new THREE.Vector3(0, 4, -4));
     const pivotGeometry = new THREE.Geometry().setFromPoints(points);
     pivot = new THREE.Line(pivotGeometry, lineMaterial);
     pivot.name = "hanger pivot axis";
