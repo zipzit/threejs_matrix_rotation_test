@@ -22,6 +22,12 @@ const main = () => {
   camera.position.z = -30;
   scene.add(s_group);
   scene.add(wheel_group);
+  {
+    const color = 0xFFFFFF;
+    const intensity = 1;
+    const light = new THREE.AmbientLight(color, intensity);
+    scene.add(light);
+  }
   //--
   const createElements = () => {
     const c_geo = new THREE.BoxGeometry(2.5, 0.12, 12);
