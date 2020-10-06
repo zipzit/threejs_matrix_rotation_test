@@ -61,7 +61,7 @@ const main = () => {
 
   const animation = () => {
     requestAnimationFrame(animation);
-    for (var ang = -20.0, ang<=20.0, ang+=0.2){
+    for (var ang = -20.0; ang<=20.0; ang+=0.2){
           rotateMeshGroup( wheel_group, pivot, ang);
       if (ang <= 20){
         ang = -20;
