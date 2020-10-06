@@ -76,6 +76,7 @@ const main = () => {
     camera.lookAt(scene.position);
     camera.updateMatrixWorld();
     renderer.render(scene, camera);
+    setTimeout(animation, 10000);
   };
 
   const onWindowResize = () => {
